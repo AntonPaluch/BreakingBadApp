@@ -1,24 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Breaking Bad Characters-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BreakingBad" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-Ah-NMK">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbV-h8-2NM">
+                                <rect key="frame" x="109" y="759" width="210" height="54"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
+                                <state key="normal" title="Get Characters">
+                                    <color key="titleColor" red="0.065635552275867218" green="0.27239373717645199" blue="0.06990334418722563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8hg-07-H8A" kind="presentation" modalPresentationStyle="fullScreen" id="lc5-zS-23N"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9DV-Ah-NMK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="22l-MG-DDM"/>
+                            <constraint firstAttribute="bottom" secondItem="9DV-Ah-NMK" secondAttribute="bottom" id="5sB-t5-wr6"/>
+                            <constraint firstItem="9DV-Ah-NMK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="N5j-fo-ZOU"/>
+                            <constraint firstItem="9DV-Ah-NMK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NBQ-gD-qSt"/>
+                            <constraint firstItem="ZbV-h8-2NM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="baF-RK-I9D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZbV-h8-2NM" secondAttribute="bottom" constant="79" id="yD2-6V-UGu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Breaking Bad Characters" id="Nk9-gm-2h9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="834.11214953271019" y="92.656587473002162"/>
+        </scene>
+        <!--Breaking Bad Characters-->
+        <scene sceneID="ZB8-pe-ISg">
+            <objects>
+                <tableViewController id="MDL-Tr-mxr" customClass="CharactersViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jsu-ZF-Kdg">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="157.5" id="MQN-6I-xAW" customClass="CharacterCell" customModule="BreakingBadApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="428" height="157.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MQN-6I-xAW" id="weo-2p-WuG">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="157.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yUK-lr-JyR">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="157.66666666666666"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="140" id="l75-C9-Eu5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ycZ-22-Gy3">
+                                            <rect key="frame" x="148" y="8" width="272" height="141.66666666666666"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name character" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgZ-Va-BS8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="272" height="20.666666666666668"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="EGC-aZ-CTX"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="164" id="GeA-uf-g8c"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupation" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMD-iG-Xpn">
+                                                    <rect key="frame" x="0.0" y="35.666666666666664" width="272" height="34.999999999999993"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="HMD-bW-mUJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iB-bD-jhf">
+                                                    <rect key="frame" x="0.0" y="85.666666666666671" width="272" height="20.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="A6m-a3-Zu9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC3-rQ-t7a">
+                                                    <rect key="frame" x="0.0" y="121.00000000000001" width="272" height="20.666666666666671"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="aKm-A3-ocH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ycZ-22-Gy3" firstAttribute="top" secondItem="weo-2p-WuG" secondAttribute="top" constant="8" id="6dg-UW-84v"/>
+                                        <constraint firstAttribute="trailing" secondItem="ycZ-22-Gy3" secondAttribute="trailing" constant="8" id="Coj-FJ-kvk"/>
+                                        <constraint firstItem="yUK-lr-JyR" firstAttribute="leading" secondItem="weo-2p-WuG" secondAttribute="leading" id="Cr4-sA-2Kg"/>
+                                        <constraint firstItem="yUK-lr-JyR" firstAttribute="top" secondItem="weo-2p-WuG" secondAttribute="top" id="Vf5-M1-MFU"/>
+                                        <constraint firstAttribute="bottom" secondItem="ycZ-22-Gy3" secondAttribute="bottom" constant="8" id="Yz3-wA-PkN"/>
+                                        <constraint firstAttribute="bottom" secondItem="yUK-lr-JyR" secondAttribute="bottom" id="kl2-02-5fK"/>
+                                        <constraint firstItem="ycZ-22-Gy3" firstAttribute="leading" secondItem="yUK-lr-JyR" secondAttribute="trailing" constant="8" symbolic="YES" id="xil-1O-P2R"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="characterImage" destination="yUK-lr-JyR" id="7mt-Yt-UAw"/>
+                                    <outlet property="nameCharacterLabel" destination="LgZ-Va-BS8" id="mJz-TP-GV9"/>
+                                    <outlet property="nickNameLabel" destination="5iB-bD-jhf" id="bsT-ka-t0e"/>
+                                    <outlet property="occupationCharacterLabel" destination="pMD-iG-Xpn" id="c90-VG-3bU"/>
+                                    <outlet property="statusCharacterLabel" destination="HC3-rQ-t7a" id="8TV-76-MGi"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MDL-Tr-mxr" id="Ff2-aw-kcV"/>
+                            <outlet property="delegate" destination="MDL-Tr-mxr" id="Bcq-Pa-Ci4"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Breaking Bad Characters" id="lK3-K3-7AC"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MdC-3y-Lao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2683.125" y="92.957746478873247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KC7-ag-jD6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6M-44-lr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8hg-07-H8A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="FcT-XB-5Mp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jne-al-f3n">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MDL-Tr-mxr" kind="relationship" relationship="rootViewController" id="eci-0X-xiK"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1773.913043478261" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BreakingBad" width="1080" height="1920"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
